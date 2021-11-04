@@ -1,3 +1,10 @@
+/*
+ * 03 - Conditionals and loop structures
+ * Homework
+ * by Iman Esfandiyar
+ */
+
+
 #include <cmath>
 #include <iostream>
 #include <limits>
