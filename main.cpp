@@ -1,3 +1,10 @@
+/*
+ * 04 - Arrays and text
+ * Lab assignments (This is not home work)
+ * by Iman Esfandiyar
+ */
+
+
 #include <iostream>
 #include <limits>
 
