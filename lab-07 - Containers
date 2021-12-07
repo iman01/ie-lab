@@ -1,0 +1,124 @@
+#include <iostream>
+#include <vector>
+#include <list>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+    std::vector<int> a(2,-1);
+    cout << "size of a= " << a.size() << endl;
+    cout << "a: ";
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+    a.resize(5);
+    //a.resize(5,3);
+    cout << "a after resize(5): ";
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+
+    a.at(2) = 3;
+    cout << "size of a after a[2] = 3: " << a.size() << endl;
+    cout << "a after a.at(2) = 3: ";
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+
+    a.push_back(10);
+    cout << "size of a after push_back(10): " << a.size() << endl;
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+
+
+    a.insert(a.begin(), 6);
+    cout << "size of a after insert(a.begin(), 6)" << endl;
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+
+
+    a.emplace_back(8);
+    cout << "size of a after emplace_back(8): " << a.size() << endl;
+    for(auto i: a)
+        std::cout << i << ' ';
+    std::cout << std::endl;
+
+
+    //🔨 🔥 Assignment 🔥 🔨
+//    int user_value = 1;
+//    std::vector<int> c;
+//    while(user_value != 0)
+//    {
+//        cin >> user_value;
+//        c.emplace_back(user_value);
+//    }
+//    int sum_c = 0;
+//    for(auto i: c)
+//        sum_c +=i;
+//    std::cout <<"sum_c= "<< sum_c << std::endl;
+
+
+
+    //🔨 🔥 Assignment 🔥 🔨 list
+//    std::list<int> f;
+//    std::list<int>::iterator it = f.begin();
+//    //auto it = f.begin();
+
+//    f.emplace_back(1); f.emplace_back(2); f.emplace_back(3);
+//    cout << "f: ";
+//    for(auto i: f)
+//        std::cout << i << ' ';
+//    std::cout << std::endl;
+
+//    f.emplace_front(4); f.emplace_front(5); f.emplace_front(6);
+//    cout << "f: ";
+//    for(auto i: f)
+//        std::cout << i << ' ';
+//    std::cout << std::endl;
+
+//    it = f.begin();
+//    std::advance(it,2);
+//    f.insert(it, 7);
+//    std::advance(it,2);
+//    f.insert(it, 7);
+
+//    cout << "f: ";
+//    for(auto i: f)
+//        std::cout << i << ' ';
+//    std::cout <<  std::endl;
+
+     //🔨 🔥 Assignment 🔥 🔨 passing to function
+
+//    std::cout <<"Please provide a number"<< std::endl;
+//    int val_count;
+//    cin >> val_count;
+//    std::cout <<"Thank you"<< std::endl;
+//    std::vector<int> g;
+//    srand(time(nullptr));
+//    //int random_val = rand() % 13 + 7; //1 to 20
+//    for (int i =0; i < val_count; i++)
+//    {
+//        int random_val = rand() % 13 + 7;
+//        g.push_back(random_val);
+
+//    }
+//    cout << "g: ";
+//    for(auto i: g)
+//        std::cout << i << ' ';
+//    std::cout << std::endl;
+
+    
+
+
+    return 0;
+}
