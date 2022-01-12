@@ -1,0 +1,103 @@
+//Create a new project, add header and source file person.cpp and person.hpp and copy the below code in right places
+
+
+/*           main.cpp            */
+#include <iostream>
+#include <string>
+#include <vector>
+#include "person.hpp"
+
+using namespace std;
+
+
+
+int main()
+{
+
+
+
+  vector<Person> persons;
+
+
+  Person person1;
+  persons.emplace_back(person_input());
+  persons.emplace_back(person_input());
+  persons.emplace_back(person_input());
+
+
+
+
+
+  print_person(persons[0]);
+  print_person(persons[1]);
+  print_person(persons[2]);
+
+
+  return 0;
+}
+
+//-----------------------------------------------------------------------------
+/*           person.hpp            */
+#pragma once
+#include <string>
+#include <vector>
+
+struct Pet {
+    std::string name;
+    int age;
+    double weight;
+};
+
+struct Person
+{
+   std::string name;
+   std::string surname;
+   int age;
+   double weight;
+   double height;
+   Pet fav_pet;
+};
+
+void print_person(Person &person);
+Person person_input();
+
+//-----------------------------------------------------------------------------
+/*           person.cpp          */
+#include "person.hpp"
+
+#include <iostream>
+
+
+Person person_input()
+{
+    Person person;
+
+    std::cout << "Enter  name: ";
+    std::cin >> person.name;
+    std::cout << "Enter  surname: ";
+    std::cin >> person.surname;
+    std::cout << "Enter age: ";
+    std::cin >> person.age;
+    std::cout << "Enter weight: ";
+    std::cin >> person.weight;
+    std::cout << "Enter  height: ";
+    std::cin >> person.height;
+
+
+    return person;
+}
+
+
+
+
+void print_person(Person &person)
+{
+   std::cout << "------------- " << std::endl;
+   std::cout << "Name: " << person.name << std::endl;
+   std::cout << "Surname: " << person.surname << std::endl;
+   std::cout << "Age: " << person.age << std::endl;
+   std::cout << "Weight: " << person.weight << std::endl;
+   std::cout << "height: " << person.height << std::endl;
+}
+
+
