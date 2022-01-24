@@ -1,0 +1,55 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+
+    std::fstream file;
+    file.open("test.csv", std::ios::in | std::ios::out | std::ios::trunc);
+
+    if(file.is_open())
+    {
+        std::cout << "File was correctly opened!" << std::endl;
+        file << "Iman;Es;1993;180\n";
+        file << "Alex;bb;2000;160";
+
+    }
+
+
+    file.seekp(0,ios::beg);
+
+
+    string line;
+
+    while(getline(file,line))
+    {
+        auto pos = line.find(';');
+        string name = line.substr(0,pos);
+        cout << "Name is: " << name << endl;
+
+        line = line.substr(pos+1);
+        cout << "new line is: " << line << endl;
+
+        pos = line.find(';');
+        string surname = line.substr(0,pos);
+        cout << "Surname is: " << surname << endl;
+
+        line = line.substr(pos+1);
+        cout << "new line is: " << line << endl;
+
+        pos = line.find(';');
+        string year = line.substr(0,pos);
+        cout << "year is: " << year << endl;
+
+        cout << "I am " << 2022 - stoi(year) << " years old" << endl;
+    }
+
+
+
+
+    file.close();
+    return 0;
+}
